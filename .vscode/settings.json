@@ -1,0 +1,19 @@
+{
+    "cSpell.words": [
+        "ggdb",
+        "ihex",
+        "lstdc",
+        "lsupc",
+        "mcpu",
+        "mfloat",
+        "mthumb",
+        "nosys",
+        "OBJCOPY",
+        "SRCS",
+        "SYMB",
+        "Wextra",
+        "Wpedantic",
+        "Wsuggest",
+        "Wuseless"
+    ]
+}
