@@ -31,7 +31,9 @@ set(cpu_PARAMS
 )
 
 # Sources
-set(sources_SRCS)
+set(sources_SRCS
+    Src/rtc.c
+)
 
 # Include directories for all compilers
 set(include_DIRS
