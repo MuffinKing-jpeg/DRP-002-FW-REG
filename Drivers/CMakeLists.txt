@@ -9,8 +9,9 @@ enable_language(C ASM)
 # file(GLOB CMSIS_SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}//cmsis-device-g0/*.c)
 
 target_include_directories(CMSIS INTERFACE
-${CMAKE_CURRENT_SOURCE_DIR}/STM32CubeG0/Drivers/CMSIS/Device/ST/STM32G0xx/Include
-${CMAKE_CURRENT_SOURCE_DIR}/STM32CubeG0/Drivers/CMSIS/Include
+${CMAKE_CURRENT_SOURCE_DIR}/STM32G0/Drivers/CMSIS/Device/ST/STM32G0xx/Include
+${CMAKE_CURRENT_SOURCE_DIR}/STM32G0/Drivers/CMSIS/Include
+
 )
 
 # target_sources(CMSIS PUBLIC
