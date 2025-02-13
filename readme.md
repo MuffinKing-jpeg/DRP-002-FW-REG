@@ -4,4 +4,8 @@ AAAAaaaaAA
 
 ## Required
 
-- [FW](https://github.com/STMicroelectronics/STM32CubeG0.git)
+**USE**:
+
+```bash
+ git submodule update --init --recursive
+```
