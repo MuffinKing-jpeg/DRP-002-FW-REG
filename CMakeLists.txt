@@ -19,9 +19,6 @@ message("Build type: " ${CMAKE_BUILD_TYPE})
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS ON)
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS ON)
 
 # Core MCU flags, CPU type, instruction set and FPU setup
 set(cpu_PARAMS 
@@ -33,6 +30,8 @@ set(cpu_PARAMS
 # Sources
 set(sources_SRCS
     Src/rtc.c
+    Src/gpio.c
+    Src/core.c
 )
 
 # Include directories for all compilers
@@ -154,14 +153,6 @@ if( CMAKE_BUILD_TYPE STREQUAL "Debug" OR
     CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo"
     )
     add_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE BUILD_DEBUG)
-    target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
-        ${CMAKE_SOURCE_DIR}/Core/Inc/debug/
-        
-    )
-    message("Debug is enabled")
-    target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-    ${DBG_FILES}
-    )
 else()
     message("Release")
     add_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE BUILD_RELEASE)

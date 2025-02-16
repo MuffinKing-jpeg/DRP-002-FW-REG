@@ -25,8 +25,12 @@
             "armToolchainPath": "${config:STM32VSCodeExtension.cubeCLT.path}/GNU-tools-for-STM32/bin",
             "gdbPath":"${config:STM32VSCodeExtension.cubeCLT.path}/GNU-tools-for-STM32/bin/arm-none-eabi-gdb",            
             "serverArgs": [
-                "-m","0",
+                "-m","0", "--frequency", "8000"
             ],
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            }
             //"preLaunchTask": "Build + Flash"
             /* If you use external loader, add additional arguments */
             //"serverArgs": ["--extload", "path/to/ext/loader.stldr"],
@@ -54,6 +58,10 @@
             "serverArgs": [
                 "-m","0",
             ],
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            }
             /* If you use external loader, add additional arguments */
             //"serverArgs": ["--extload", "path/to/ext/loader.stldr"],
         }

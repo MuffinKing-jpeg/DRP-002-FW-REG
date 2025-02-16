@@ -5,7 +5,7 @@
 #include "stm32g0xx.h"
 #include "rtc.h"
 #include "core.h"
+#include "gpio.h"
 
-CORE_HandleTypeDef RTC_Init(uint8_t sleep_period);
 
 #endif

@@ -16,15 +16,19 @@
  ******************************************************************************
  */
 
-
 #include "main.h"
+#include "gpio.h"
 
 int main(void)
 {
+    CORE_ClockInit();
+    CORE_PWRInit();
+    GPIO_InitPort();
+    RTC_Init();
+
     /* Loop forever */
-	while (1)
+    while (1)
     {
-        /* code */
+        CORE_EnterSTOP();
     }
-    ;
 }
