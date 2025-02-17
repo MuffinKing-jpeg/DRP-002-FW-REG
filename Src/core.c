@@ -6,7 +6,7 @@ void CORE_PWRInit(void)
 {
     PWR->CR1 |= PWR_CR1_DBP;
     RCC->APBENR1 |= RCC_APBENR1_PWREN;
-    // PWR->CR1 |= PWR_CR1_FPD_STOP;
+    PWR->CR1 |= PWR_CR1_FPD_STOP;
     PWR->CR1 &= ~PWR_CR1_LPR;
 
     #ifdef BUILD_DEBUG
@@ -21,8 +21,8 @@ void CORE_ClockInit(void)
 
 void CORE_EnterSTOP(void)
 {
-    RCC->CR |= (4UL << RCC_CR_HSIDIV_Pos);    // Slow down to 1MHz
-    // PWR->CR1 |= PWR_CR1_LPR;                    // Enable LP regulator
+    RCC->CR |= (4UL << RCC_CR_HSIDIV_Pos);      // Slow down to 1MHz
+    PWR->CR1 |= PWR_CR1_LPR;                    // Enable LP regulator
     PWR->CR1 &= ~PWR_CR1_LPMS;
     __WFE();
 }
