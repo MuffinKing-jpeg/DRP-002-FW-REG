@@ -6,10 +6,9 @@ uint8_t LED_Counter = 0;
 CORE_HandleTypeDef RTC_Init(void)
 {
     RCC->APBENR1 |= RCC_APBENR1_RTCAPBEN;
-    RCC->BDCR |= RCC_BDCR_BDRST;
     RCC->BDCR &= ~RCC_BDCR_BDRST;
     RCC->BDCR |= RCC_BDCR_RTCEN;
-    RCC->BDCR &= ~RCC_BDCR_RTCSEL_1;
+    RCC->BDCR |= RCC_BDCR_RTCSEL_1;
 
     RTC->WPR = 0xCA;
     RTC->WPR = 0x53;
