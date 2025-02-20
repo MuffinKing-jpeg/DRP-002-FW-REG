@@ -19,7 +19,7 @@ CORE_HandleTypeDef RTC_Init(void)
     while (!(RTC->ICSR & RTC_ICSR_WUTWF) && !(RTC->ICSR & RTC_ICSR_INITF));
     
 
-    RTC->CR |= RTC_CR_WUTIE | RTC_CR_WUCKSEL_0;
+    RTC->CR |= RTC_CR_WUTIE;
     RTC->WUTR = CORE_RTC_SLEEP_PERIOD;
 
     RTC->CR |= RTC_CR_WUTE;
