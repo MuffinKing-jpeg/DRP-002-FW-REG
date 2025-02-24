@@ -23,8 +23,10 @@ int main(void)
 {
     CORE_ClockInit();
     CORE_PWRInit();
-    GPIO_InitPort();
+    GPIO_ConfigALL();
     RTC_Init();
+    SERVO_TIMConfig(TIM1, TIM_CHANNEL_2);
+    SERVO_SetAngle(TIM1, TIM_CHANNEL_2, 180);
 
     /* Loop forever */
     while (1)

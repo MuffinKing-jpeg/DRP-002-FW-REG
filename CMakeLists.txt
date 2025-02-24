@@ -32,6 +32,7 @@ set(sources_SRCS
     Src/rtc.c
     Src/gpio.c
     Src/core.c
+    Src/servo.c
 )
 
 # Include directories for all compilers

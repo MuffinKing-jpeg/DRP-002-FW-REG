@@ -1,9 +1,10 @@
 #include "rtc.h"
+#include "gpio.h"
 #define LED_DURATION 100
 
 uint8_t LED_Counter = 0;
 
-CORE_HandleTypeDef RTC_Init(void)
+void RTC_Init(void)
 {
     RCC->APBENR1 |= RCC_APBENR1_RTCAPBEN;
     RCC->BDCR &= ~RCC_BDCR_BDRST;
@@ -29,7 +30,6 @@ CORE_HandleTypeDef RTC_Init(void)
     while ((RTC->ICSR & RTC_ICSR_INITF));
 
     NVIC_EnableIRQ(RTC_TAMP_IRQn);
-    return CORE_OK;
 }
 
 void RTC_TAMP_IRQHandler(void)
@@ -41,6 +41,6 @@ void RTC_TAMP_IRQHandler(void)
     if (LED_Counter >= LED_DURATION)
     {
         LED_Counter = 0;
-        GPIOB->ODR ^= GPIO_ODR_OD7;  
+        GPIO_TogglePin(GPIOB, GPIO_PIN7);
     }
 }

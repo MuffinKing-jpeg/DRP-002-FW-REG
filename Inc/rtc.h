@@ -5,7 +5,7 @@
 #include "core.h"
 
 
-CORE_HandleTypeDef RTC_Init(void);
+void RTC_Init(void);
 
 void RTC_TAMP_IRQHandler(void);
 

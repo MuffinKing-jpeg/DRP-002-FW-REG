@@ -6,6 +6,7 @@
 #include "rtc.h"
 #include "core.h"
 #include "gpio.h"
+#include "servo.h"
 
 
 #endif
